@@ -5,7 +5,7 @@
 <section>
     @foreach($posts as $post)
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-md-12">
           <h2>{{$post->title}}</h2>
            {{str_limit(strip_tags(nl2br($post->content)),100)}}
            <p align="right">
@@ -15,7 +15,7 @@
     </div>
     @endForeach
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-12">
         {!! $posts->render() !!}
         </div>
     </div>

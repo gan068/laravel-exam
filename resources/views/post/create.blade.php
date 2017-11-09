@@ -3,7 +3,7 @@
 @section('content')
 <section>
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-12">
             <h3>新增文章</h3>
             <form method="post" action="{{route('post.store')}}">
                 <input type="hidden" name="_method" value="put">

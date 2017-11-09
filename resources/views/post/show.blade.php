@@ -3,7 +3,7 @@
 @section('content')
 <section>
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-12">
             <h2>{{$post->title}}</h2>
             {!!nl2br($post->content)!!}
             <p align="right">文章建立時間：{{$post->created_at}}</p>
@@ -12,7 +12,7 @@
 <section>
 <section>
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-12">
             <h3>我要留言</h3>
             <form method="post" action="{{route('comment.store')}}">
                 <input type="hidden" name="_method" value="put">
@@ -28,7 +28,7 @@
 </section>
 <section>
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-12">
             <h3>留言列表</h3>
             @foreach($post->comments()->orderBy('created_at','ASC')->get() as $comment)
             <p>{!! nl2br(strip_tags($comment->content)) !!}</p>
