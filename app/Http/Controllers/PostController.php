@@ -11,17 +11,17 @@ class PostController extends Controller
 {
     public function index()
     {
-      return 'index';
+      return view('index');
     }
   
     public function show($id)
     {
-      return "show {$id}";
+      return view('post.show', compact('id'));
     }
   
     public function create()
     {
-      return "create";
+      return view('post.create');
     }
     
     public function store()
