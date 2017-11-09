@@ -24,9 +24,9 @@
 */
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/', ['uses' => 'PostController@index']);
-    Route::get('/post/{id}', ['uses' => 'PostController@show']);
-    Route::get('/post/create', ['uses' => 'PostController@create']);
-    Route::post('/post', ['uses' => 'PostController@store']);
-    Route::post('/comment', ['uses' => 'CommentController@store']);
+    Route::get('/', ['as' => 'home', 'uses' => 'PostController@index']);
+    Route::get('/post/{id}', ['as' => 'post.show', 'uses' => 'PostController@show']);
+    Route::get('/post/create', ['as' => 'post.create', 'uses' => 'PostController@create']);
+    Route::post('/post', ['as' => 'post.store', 'uses' => 'PostController@store']);
+    Route::post('/comment', ['as' => 'comment.store', 'uses' => 'CommentController@store']);
 });
