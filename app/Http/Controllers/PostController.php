@@ -6,12 +6,15 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Post;
 
 class PostController extends Controller
 {
     public function index()
     {
-      return view('index');
+      $posts = Post::paginate(5);
+      
+      return view('index', compact('posts'));
     }
   
     public function show($id)
