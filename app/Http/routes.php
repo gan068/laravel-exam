@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +24,9 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::get('/', ['uses' => 'PostController@index']);
+    Route::get('/post/{id}', ['uses' => 'PostController@show']);
+    Route::get('/post/create', ['uses' => 'PostController@create']);
+    Route::post('/post', ['uses' => 'PostController@store']);
+    Route::post('/comment', ['uses' => 'CommentController@store']);
 });
