@@ -8,9 +8,9 @@
       <div class="col-md-5">
           <h2>{{$post->title}}</h2>
            {{str_limit(strip_tags(nl2br($post->content)),100)}}
-           <div class="pull-right">
+           <p align="right">
              <a href="{{route('post.show',$post->id)}}">more</a>
-           </div>
+           </p>
         </div>
     </div>
     @endForeach
